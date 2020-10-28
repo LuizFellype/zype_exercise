@@ -1,0 +1,14 @@
+- if @videos.present?
+  .row
+    - @videos.each do |video|
+      .col-md-4.col-sm-2.mb-3
+        .card
+          .card-body
+            = link_to "/videos/#{video['_id']}", class: 'player-toggle', data: { video_id: video['_id'] } do
+              = image_tag video['thumbnails'][0]['url'], class: 'img-fluid mb-2'
+
+              = video['title']
+              - if video['subscription_required']
+                %span.badge.badge-danger Premium
+- else
+  %p.text-center No videos

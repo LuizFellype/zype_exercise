@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ZypeExercise</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/navigation' %>
+
+    <div class="container p-3">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
+    <%= javascript_pack_tag 'application' %>
+  </body>
+</html>
